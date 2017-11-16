@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title></title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+		<script src="js/jquery.countdown360.js" type="text/javascript" charset="utf-8"></script>
+      <script type="text/javascript" src="js/twitter.js"></script>
+     <link rel="stylesheet" type="text/css" href="css/style.css">
+      <link rel="stylesheet" href="css/twitter.css" />
+     <style> 
+      .blink_me {
+    border-radius: 50%;
+    width: 400px;
+    height: 400px;      
+    background-color: transparent;
+    border: 20px solid red;
+    animation: blinker 1s ease infinite;
+    display:none;      
+   
+}
+    
+@keyframes blinker {  
+  50% { border: 20px solid transparent; }
+}
+
+
+</style>
+    </head>
+
+	<body>
+        <h1 style="text-align:center;color:#fff;">Press 'SPACE' to start the timer</h1>
+        <div class="content">
+			<div class="simple-marquee-container">
+				<div class="marquee-sibling">
+                    <img style="margin-top:5px;" src="img/twitter3.png">
+					
+				</div>
+				<div class="marquee">
+					<ul class="marquee-content-items">
+						<li>@vid GZS vrh slovenskega gospodarstva</li>
+						<li>@vid GZS vrh slovenskega gospodarstva</li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+        
+        <img class="timer-200" src="img/timer_130.png" width="400px" height="400px">
+        <audio class="audioDemo" controls preload="none">
+            <source src="audio_3.mp3" type="audio/mpeg">
+           
+        </audio>
+        <div class="blink_me"></div>
+		<div id="container">
+			<div id="countdown"></div>
+			<script type="text/javascript" charset="utf-8">
+                
+            $(function() {
+                $('#countdown').css({
+                    'position' : 'absolute',
+                    'left' : '80%',
+                    'top' : '40%',
+                    'margin-left' : function() {return -$(this).outerWidth()/2},
+                    'margin-top' : function() {return -$(this).outerHeight()/2}
+                });
+            });
+            $(function() {
+                $('.blink_me').css({
+                    'position' : 'absolute',
+                    'left' : '80%',
+                    'top' : '40%',
+                    'margin-left' : function() {return -$(this).outerWidth()/2},
+                    'margin-top' : function() {return -$(this).outerHeight()/2}
+                });
+            });
+                
+            $(function() {
+                $('.timer-200').css({
+                    'position' : 'absolute',
+                    'left' : '80%',
+                    'top' : '40%',
+                    'margin-left' : function() {return -$(this).outerWidth()/2},
+                    'margin-top' : function() {return -$(this).outerHeight()/2}
+                });
+            });    
+		 	var countdown = $("#countdown").countdown360({
+            radius: 200,
+            seconds: 90,
+            label: false,    
+            autostart: false,
+            onComplete: function () {
+                
+        }
+    });     
+                
+
+    
+//    jQuery('.timer-200').css({display: 'toggle'});
+//    jQuery('.timer-200').css({display: 'block'});
+//}, function() {
+//    jQuery('.div1').animate({width: 'toggle'});
+//    jQuery('.div2').animate({width: '100%'});
+
+                
+document.body.onkeyup = function(e){
+    if(e.keyCode == 32){
+        countdown.start();
+    }
+}
+
+$(function (){
+
+				$('.simple-marquee-container').SimpleMarquee();
+				
+			});
+                
+//var handlers = [
+//    // on first click:
+//    function() {
+//        jQuery('.timer-200').css({display: 'toggle'});
+//        jQuery('.timer-200').css({display: 'inline'});
+//        jQuery('.blink_me').css({display: 'toggle'});
+//        jquery('.blink_me').css({display: 'none'});
+//    },
+//    // on second click:
+//    function() {
+//        countdown.start();
+//    }
+//    // ...as many more as you want here
+//];
+//
+//var counter = 0;
+//$("#countdown").click(function() {
+//    // call the appropriate function preserving this and any arguments
+//    handlers[counter++].apply(this, Array.prototype.slice.apply(arguments));
+//    // "wrap around" when all handlers have been called
+//    counter %= handlers.length;
+//});
+
+    
+  
+		  </script>
+		</div>
+
+	</body>
+</html>
